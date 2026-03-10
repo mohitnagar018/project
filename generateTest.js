@@ -21,29 +21,29 @@ const endpoint =
 // `;
 
 
-const prompt= `Write multiple automated tests in **JavaScript** using **@playwright/test** for https://eddemo.edvantalabs.com/login/index.php. 
-Include these test scenarios:
+// const prompt= `Write multiple automated tests in **JavaScript** using **@playwright/test** for https://eddemo.edvantalabs.com/login/index.php. 
+// Include these test scenarios:
 
-1. Navigate to the given URL.
-2. Log in using:
-   - Username: shabrej.ahmad
-   - Password: Edvanta#21$
-3. Verify that the login is successful (for example by checking dashboard by  URL change).
-4.  In my learning Locate the search box, type **"connect +"**, and press **Enter**.
-5. Verify that **"Connect +"** appears in the search results.
-6. Verify that the **Connect + course card** is visible.
-7. Click the **Connect +** course card and verify navigation to the correct page:  
-   https://eddemo.edvantalabs.com/course/view.php?id=2
-8. Collect all links on the course page and verify that they are clickable.
+// 1. Navigate to the given URL.
+// 2. Log in using:
+//    - Username: shabrej.ahmad
+//    - Password: Edvanta#21$
+// 3. Verify that the login is successful (for example by checking dashboard by  URL change).
+// 4.  In my learning Locate the search box, type **"connect +"**, and press **Enter**.
+// 5. Verify that **"Connect +"** appears in the search results.
+// 6. Verify that the **Connect + course card** is visible.
+// 7. Click the **Connect +** course card and verify navigation to the correct page:  
+//    https://eddemo.edvantalabs.com/course/view.php?id=2
+// 8. Collect all links on the course page and verify that they are clickable.
 
-**Important:**
-- Do NOT return any HTML from the website.
-- Return only JavaScript code, ready to save in a Playwright test file.
+// **Important:**
+// - Do NOT return any HTML from the website.
+// - Return only JavaScript code, ready to save in a Playwright test file.
 
-Return the code only.
+// Return the code only.
 
 
-`
+// `
 
 
 // const prompt = `
@@ -63,6 +63,26 @@ Return the code only.
 // Return the code only.
 // `;
 
+
+const prompt= `Write multiple automated tests in **JavaScript** using **@playwright/test** for https://eddemo.edvantalabs.com/login/index.php. 
+Include these test scenarios:
+
+1. Navigate to the given URL.
+2. Log in using:
+   - Username: shabrej.ahmad
+   - Password: Edvanta#21$
+3. Verify that the login is successful (for example by checking dashboard by  URL change).
+4. then click on  dropdown icon on profile and click on logout.
+5.then check whether the logout is successfully done or not.
+
+
+**Important:**
+- Do NOT return any HTML from the website.
+- Return only JavaScript code, ready to save in a Playwright test file.
+
+Return the code only.
+
+`
 async function generateTest() {
   const res = await fetch(endpoint, {
     method: "POST",
@@ -89,9 +109,9 @@ async function generateTest() {
 
   const code = data.candidates[0].content.parts[0].text;
 
-  fs.writeFileSync("Tests/Test02.spec.js", code);
+  fs.writeFileSync("Tests/Logout.spec.js", code);
 
-  console.log(" Test created: Test02.spec.js");
+  console.log(" Test created: Logout.spec.js");
 }
 
 generateTest();
