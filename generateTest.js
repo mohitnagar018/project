@@ -28,18 +28,13 @@ Include these test scenarios:
 2. Log in using:
    - Username: shabrej.ahmad
    - Password: Edvanta#21$
-3. Verify that the login is successful (for example by checking dashboard visibility or URL change).
-4. Locate the search box, type **"connect +"**, and press **Enter**.
+3. Verify that the login is successful (for example by checking dashboard by  URL change).
+4.  In my learning Locate the search box, type **"connect +"**, and press **Enter**.
 5. Verify that **"Connect +"** appears in the search results.
 6. Verify that the **Connect + course card** is visible.
 7. Click the **Connect +** course card and verify navigation to the correct page:  
    https://eddemo.edvantalabs.com/course/view.php?id=2
 8. Collect all links on the course page and verify that they are clickable.
-9. Click each link to confirm it works (handle navigation safely).
-10. Identify all **accordion components** on the page and verify they **expand and collapse properly**.
-11. For each accordion, click every **link or content item inside** and verify they work correctly.
-12. Identify all **navbar elements** and verify each one is clickable by interacting with them.
-13. Locate the **Edit mode slider/toggle** in the navbar, click it, and verify that it is enabled and the **slider color changes to black** (or reflects the enabled state).
 
 **Important:**
 - Do NOT return any HTML from the website.
