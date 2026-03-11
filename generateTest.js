@@ -84,35 +84,69 @@ const endpoint =
 
 // `
 
- const prompt= `Generate Playwright automation test code using JavaScript for the Automation Practice Form on https://demoqa.com/automation-practice-form.
+//  const prompt= `Generate Playwright automation test code using JavaScript for the Automation Practice Form on https://demoqa.com/automation-practice-form.
 
-Requirements:
+// Requirements:
+// - Use Playwright Test framework.
+// - Open the browser and navigate to the DemoQA Automation Practice Form.
+// - Fill the following fields with valid data:
+//   - First Name
+//   - Last Name
+//   - Email
+//   - Select Gender
+//   - Mobile Number
+//   - Date of Birth
+//   - Subjects
+//   - Hobbies
+//   - Address
+// - Click the Submit button.
+
+// Test cases to include:
+// 1. Verify successful submission of the form with valid data.
+// 2. Verify that the confirmation modal appears after submission.
+// 3. Validate behavior when required fields are empty.
+// 4. Test invalid email format validation.
+
+// Include:
+// - Playwright test structure using test() and expect().
+// - Proper selectors for each field.
+// - Assertions to verify the success message.
+// - Comments explaining each step.
+// `
+const prompt=`Generate Playwright UI validation tests using JavaScript for a Node.js project.
+
+Websites to test:
+1. https://example.com
+2. https://demoqa.com
+3. https://the-internet.herokuapp.com
+
+Test Requirements:
+
+1. Open each website URL.
+2. Verify UI elements like:
+   - Buttons
+   - Headings
+   - Navigation menu
+   - Footer
+3. Check if buttons are visible and clickable.
+4. Validate font-family and font-size of main headings.
+5. Check alignment or visibility of navigation bar elements.
+6. Validate hover effect on buttons if possible.
+
+Important Conditions:
+- Before validating any element, first check if the element exists.
+- If the element is not present on the page, skip that validation test for that element.
+- Use conditional checks so the test does not fail if an element is missing.
+- Log a message like "Element not found, skipping validation".
+
+Implementation Rules:
 - Use Playwright Test framework.
-- Open the browser and navigate to the DemoQA Automation Practice Form.
-- Fill the following fields with valid data:
-  - First Name
-  - Last Name
-  - Email
-  - Select Gender
-  - Mobile Number
-  - Date of Birth
-  - Subjects
-  - Hobbies
-  - Address
-- Click the Submit button.
+- Use page.locator() for selectors.
+- Use try/catch or conditional checks.
+- Use expect assertions only if element exists.
 
-Test cases to include:
-1. Verify successful submission of the form with valid data.
-2. Verify that the confirmation modal appears after submission.
-3. Validate behavior when required fields are empty.
-4. Test invalid email format validation.
-
-Include:
-- Playwright test structure using test() and expect().
-- Proper selectors for each field.
-- Assertions to verify the success message.
-- Comments explaining each step.
-`
+Return clean Playwright test code that can run using:
+npx playwright test`
 async function generateTest() {
   const res = await fetch(endpoint, {
     method: "POST",
@@ -139,9 +173,9 @@ async function generateTest() {
 
   const code = data.candidates[0].content.parts[0].text;
 
-  fs.writeFileSync("Tests/Signup.spec.js", code);
+  fs.writeFileSync("Tests/UiTesting.spec.js", code);
 
-  console.log(" Test created: Signup.spec.js");
+  console.log(" Test created successfully");
 }
 
 generateTest();
